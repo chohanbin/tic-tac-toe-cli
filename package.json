@@ -4,11 +4,15 @@
   "type": "module",
   "scripts": {
     "start": "npm run build && node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "biome-check": "biome check",
+    "biome-apply": "biome check --write"
   },
   "author": "Hanbin Cho",
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/node": "^22.15.29",
+    "lefthook": "^1.11.13",
     "typescript": "^5.8.3"
   }
 }
