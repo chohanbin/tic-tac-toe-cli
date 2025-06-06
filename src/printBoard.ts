@@ -1,6 +1,6 @@
 import { Table } from "console-table-printer";
 import type { ColumnOptionsRaw } from "console-table-printer/dist/src/models/external-table.js";
-import type { Board } from "./board.js";
+import type { Board } from "./types";
 
 type CreateColumnDefsParam = {
   board: Board;
