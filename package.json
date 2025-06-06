@@ -1,0 +1,14 @@
+{
+  "name": "tic-tac-toe-cli",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "build": "tsc"
+  },
+  "author": "Hanbin Cho",
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "typescript": "^5.8.3"
+  }
+}
