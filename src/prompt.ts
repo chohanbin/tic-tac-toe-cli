@@ -6,4 +6,4 @@ const prompt = readlinePromises.createInterface({
   prompt: "",
 });
 
-export default prompt;
+export { prompt };

@@ -1,4 +1,4 @@
-import type { Board } from "./board.js";
+import type { Board } from "./types";
 
 type Param = {
   size: number;
@@ -11,6 +11,7 @@ const createBoard = ({ size, indexOffset }: Param): Board => {
   return {
     size,
     cells,
+    status: "NotOver",
     indexOffset,
   };
 };
