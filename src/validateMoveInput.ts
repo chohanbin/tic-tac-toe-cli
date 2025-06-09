@@ -11,7 +11,7 @@ type ValidateMoveResult = {
   error?: string;
 };
 
-const validateMove = ({ input, board }: Param): ValidateMoveResult => {
+const validateMoveInput = ({ input, board }: Param): ValidateMoveResult => {
   const hasTwoIntsOnly = /^\s*\d+\s+\d+\s*$/.test(input);
 
   if (!hasTwoIntsOnly) {
@@ -22,7 +22,8 @@ const validateMove = ({ input, board }: Param): ValidateMoveResult => {
     };
   }
 
-  const [rowToken, colToken] = input.trim().split(/\s+/);
+  // X represents column index, Y represents row index.
+  const [colToken, rowToken] = input.trim().split(/\s+/);
 
   const rowIndex = Number.parseInt(rowToken) - board.indexOffset;
   const colIndex = Number.parseInt(colToken) - board.indexOffset;
@@ -47,4 +48,4 @@ const validateMove = ({ input, board }: Param): ValidateMoveResult => {
   return { valid: true, move: { row: rowIndex, col: colIndex } };
 };
 
-export { validateMove };
+export { validateMoveInput };
