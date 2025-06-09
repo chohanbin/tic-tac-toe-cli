@@ -4,7 +4,7 @@ import { otherPlayer } from "./otherPlayer.js";
 import { printBoard } from "./printBoard.js";
 import { prompt } from "./prompt.js";
 import type { Coord, Player } from "./types.js";
-import { validateMove } from "./validateMove.js";
+import { validateMoveInput } from "./validateMoveInput.js";
 
 console.log("Welcome to Tic Tac Toe!");
 
@@ -35,7 +35,7 @@ while (true) {
         `Player ${currentPlayer}, make a move!\n`,
       );
 
-      const { valid, move, error } = validateMove({ input, board });
+      const { valid, move, error } = validateMoveInput({ input, board });
 
       if (valid) {
         markMove({ move: move as Coord, mover: currentPlayer, board });
