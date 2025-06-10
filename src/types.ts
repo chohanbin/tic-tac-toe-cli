@@ -23,6 +23,10 @@ type StatsPerPlayer = {
   [key in Player]: StatsPerLine;
 };
 
+type Score = {
+  [key in Player]: number;
+};
+
 type Board = {
   size: number;
   cells: Cell[][];
@@ -31,4 +35,4 @@ type Board = {
   stats: StatsPerPlayer;
 };
 
-export type { Board, Coord, Status, StatsPerPlayer, Player };
+export type { Board, Coord, Score, Status, StatsPerPlayer, Player };

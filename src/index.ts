@@ -1,21 +1,23 @@
+import { announceRoundResult } from "./announceRoundResult.js";
 import { createBoard } from "./createBoard.js";
 import { markMoveAndCheckWin } from "./markMoveAndCheckWin.js";
 import { otherPlayer } from "./otherPlayer.js";
 import { printBoard } from "./printBoard.js";
 import { prompt } from "./prompt.js";
-import type { Coord, Player } from "./types.js";
+import type { Coord, Player, Score } from "./types.js";
 import { validateMoveInput } from "./validateMoveInput.js";
 
 console.log("Welcome to Tic Tac Toe!");
 
 const boardSize = 3;
 const indexOffset = 1;
+const score: Score = { X: 0, O: 0 };
 let roundCount = 0;
 let currentPlayer: Player = "X";
 
 while (true) {
   roundCount += 1;
-  console.log(`Round ${roundCount}!`);
+  console.log(`\nRound ${roundCount}!`);
 
   // Reset board
   const board = createBoard({ size: boardSize, indexOffset });
@@ -58,6 +60,8 @@ while (true) {
 
     turnCount += 1;
   }
+
+  announceRoundResult({ score, status: board.status });
 
   const answer = await prompt.question("Play again? ('yes')\n");
 
