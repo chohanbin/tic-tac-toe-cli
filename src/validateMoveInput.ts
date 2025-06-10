@@ -12,7 +12,7 @@ type ValidateMoveResult = {
 };
 
 const validateMoveInput = ({ input, board }: Param): ValidateMoveResult => {
-  const hasTwoIntsOnly = /^\s*\d+\s+\d+\s*$/.test(input);
+  const hasTwoIntsOnly = /^\s*-?\d+\s+-?\d+\s*$/.test(input);
 
   if (!hasTwoIntsOnly) {
     return {
