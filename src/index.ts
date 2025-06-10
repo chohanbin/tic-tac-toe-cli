@@ -1,5 +1,5 @@
 import { createBoard } from "./createBoard.js";
-import { markMove } from "./markMove.js";
+import { markMoveAndCheckWin } from "./markMoveAndCheckWin.js";
 import { otherPlayer } from "./otherPlayer.js";
 import { printBoard } from "./printBoard.js";
 import { prompt } from "./prompt.js";
@@ -38,7 +38,11 @@ while (true) {
       const { valid, move, error } = validateMoveInput({ input, board });
 
       if (valid) {
-        markMove({ move: move as Coord, mover: currentPlayer, board });
+        markMoveAndCheckWin({
+          move: move as Coord,
+          player: currentPlayer,
+          board,
+        });
         currentPlayer = otherPlayer({ currentPlayer });
         break;
       }
