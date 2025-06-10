@@ -20,14 +20,20 @@ while (true) {
   // Reset board
   const board = createBoard({ size: boardSize, indexOffset });
   const maxTurn = board.size * board.size;
-  let turnCount = 0;
+  let turnCount = 1;
 
-  do {
-    console.log("\n");
+  while (true) {
     printBoard({ board });
 
-    turnCount += 1;
-    console.log(`Turn: ${turnCount}`);
+    if (turnCount > maxTurn && board.status === "NotOver") {
+      board.status = "Draw";
+    }
+
+    if (board.status !== "NotOver") {
+      break;
+    }
+
+    console.log(`Turn: ${turnCount}\n`);
 
     // Ask for the next move.
     while (true) {
@@ -49,13 +55,19 @@ while (true) {
 
       console.log(error);
     }
-  } while (turnCount < maxTurn);
 
-  const answer = await prompt.question(
-    "Round finished. Play again? (say 'yes')\n",
-  );
+    turnCount += 1;
+  }
 
-  if (answer.trim() !== "yes") {
+  const answer = await prompt.question("Play again? ('yes')\n");
+
+  if (answer.trim() === "yes") {
+    if (board.status === "XWon") {
+      currentPlayer = "X";
+    } else if (board.status === "OWon") {
+      currentPlayer = "O";
+    }
+  } else {
     break;
   }
 }
