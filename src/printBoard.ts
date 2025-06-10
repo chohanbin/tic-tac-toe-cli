@@ -54,6 +54,7 @@ const printBoard = ({ board }: PrintBoardParam) => {
 
   populateDisplayTable({ board, table: displayTable });
 
+  console.log("\n");
   displayTable.printTable();
 };
 

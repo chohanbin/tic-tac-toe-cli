@@ -5,8 +5,8 @@
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "build": "tsc",
-    "biome-check": "biome check",
-    "biome-apply": "biome check --write"
+    "biome:check": "biome check",
+    "biome:apply": "biome check --write"
   },
   "author": "Hanbin Cho",
   "devDependencies": {
