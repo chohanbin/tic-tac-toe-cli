@@ -1,5 +1,6 @@
 import { announceRoundResult } from "./announceRoundResult.js";
 import { createBoard } from "./createBoard.js";
+import { greetingsWordArt } from "./greetingsWordArt.js";
 import { markMoveAndCheckWin } from "./markMoveAndCheckWin.js";
 import { otherPlayer } from "./otherPlayer.js";
 import { printBoard } from "./printBoard.js";
@@ -7,7 +8,7 @@ import { prompt } from "./prompt.js";
 import type { Coord, Player, Score } from "./types.js";
 import { validateMoveInput } from "./validateMoveInput.js";
 
-console.log("Welcome to Tic Tac Toe!");
+console.log(greetingsWordArt);
 
 const boardSize = 3;
 const indexOffset = 1;
