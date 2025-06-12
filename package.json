@@ -11,12 +11,12 @@
   "author": "Hanbin Cho",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@types/figlet": "^1.7.0",
     "@types/node": "^22.15.29",
     "lefthook": "^1.11.13",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@types/figlet": "^1.7.0",
     "console-table-printer": "^2.14.1",
     "figlet": "^1.8.1"
   }
