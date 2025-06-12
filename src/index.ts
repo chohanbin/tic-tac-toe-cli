@@ -18,7 +18,7 @@ let currentPlayer: Player = "X";
 
 while (true) {
   roundCount += 1;
-  console.log(`\nRound ${roundCount}!`);
+  console.log(`\n🏁  Round ${roundCount}!`);
 
   // Reset board
   const board = createBoard({ size: boardSize, indexOffset });
@@ -41,7 +41,7 @@ while (true) {
     // Ask for the next move.
     while (true) {
       const input = await prompt.question(
-        `Player ${currentPlayer}, make a move!\n`,
+        `🤔  Player ${currentPlayer}, make a move!\n`,
       );
 
       const { valid, move, error } = validateMoveInput({ input, board });
@@ -56,7 +56,7 @@ while (true) {
         break;
       }
 
-      console.log(error);
+      console.log(`\n❌  ${error}`);
     }
 
     turnCount += 1;
@@ -64,7 +64,7 @@ while (true) {
 
   announceRoundResult({ score, status: board.status });
 
-  const answer = await prompt.question("Play again? ('yes')\n");
+  const answer = await prompt.question("🎲  Play again? ('say yes')\n");
 
   if (answer.trim() === "yes") {
     if (board.status === "XWon") {
